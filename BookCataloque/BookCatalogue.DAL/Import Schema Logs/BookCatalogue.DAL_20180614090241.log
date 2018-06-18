@@ -1,0 +1,84 @@
+6/14/2018 12:02:41 PM	This log contains information about the import schema operation into project 'BookCatalogue.DAL' on computer 'MAKAROVA-O-PC' by user 'makarova.olga'.
+6/14/2018 12:02:42 PM	Import of database schema has started.
+6/14/2018 12:02:46 PM	Gathering database credentials
+6/14/2018 12:02:46 PM	Gathering database options
+6/14/2018 12:02:46 PM	Gathering users
+6/14/2018 12:02:46 PM	Gathering roles
+6/14/2018 12:02:46 PM	Gathering application roles
+6/14/2018 12:02:46 PM	Gathering role memberships
+6/14/2018 12:02:46 PM	Gathering filegroups
+6/14/2018 12:02:46 PM	Gathering full-text catalogs
+6/14/2018 12:02:46 PM	Gathering assemblies
+6/14/2018 12:02:46 PM	Gathering certificates
+6/14/2018 12:02:46 PM	Gathering asymmetric keys
+6/14/2018 12:02:46 PM	Gathering symmetric keys
+6/14/2018 12:02:46 PM	Gathering encrypted symmetric keys
+6/14/2018 12:02:46 PM	Gathering schemas
+6/14/2018 12:02:46 PM	Gathering XML schema collections
+6/14/2018 12:02:46 PM	Gathering user-defined data types
+6/14/2018 12:02:46 PM	Gathering user-defined types
+6/14/2018 12:02:46 PM	Gathering table types
+6/14/2018 12:02:46 PM	Gathering unique keys for table types
+6/14/2018 12:02:46 PM	Gathering primary keys for table types
+6/14/2018 12:02:46 PM	Gathering indexes for table types
+6/14/2018 12:02:46 PM	Gathering check constraints for table types
+6/14/2018 12:02:46 PM	Gathering default constraints for table types
+6/14/2018 12:02:46 PM	Gathering partition functions
+6/14/2018 12:02:46 PM	Gathering partition schemes
+6/14/2018 12:02:46 PM	Gathering functions
+6/14/2018 12:02:46 PM	Gathering encrypted functions
+6/14/2018 12:02:46 PM	Gathering aggregates
+6/14/2018 12:02:46 PM	Gathering procedures
+6/14/2018 12:02:46 PM	Gathering encrypted procedures
+6/14/2018 12:02:46 PM	Gathering tables
+6/14/2018 12:02:46 PM	Gathering primary keys
+6/14/2018 12:02:46 PM	Gathering unique constraints
+6/14/2018 12:02:46 PM	Gathering foreign keys
+6/14/2018 12:02:46 PM	Gathering default constraints
+6/14/2018 12:02:46 PM	Gathering check constraints
+6/14/2018 12:02:46 PM	Gathering views
+6/14/2018 12:02:46 PM	Gathering encrypted views
+6/14/2018 12:02:46 PM	Gathering indexes
+6/14/2018 12:02:46 PM	Gathering statistics
+6/14/2018 12:02:46 PM	Gathering full-text index stoplists
+6/14/2018 12:02:46 PM	Gathering search property lists
+6/14/2018 12:02:46 PM	Gathering search properties
+6/14/2018 12:02:46 PM	Gathering full-text indexes
+6/14/2018 12:02:46 PM	Gathering column store indexes
+6/14/2018 12:02:46 PM	Gathering spatial indexes
+6/14/2018 12:02:46 PM	Gathering XML indexes
+6/14/2018 12:02:46 PM	Gathering Selective XML indexes
+6/14/2018 12:02:46 PM	Gathering encrypted triggers
+6/14/2018 12:02:46 PM	Gathering triggers
+6/14/2018 12:02:46 PM	Gathering encrypted and clr ddl triggers
+6/14/2018 12:02:46 PM	Gathering ddl triggers
+6/14/2018 12:02:46 PM	Gathering synonyms
+6/14/2018 12:02:46 PM	Gathering defaults
+6/14/2018 12:02:46 PM	Gathering data constraint uddt bindings
+6/14/2018 12:02:46 PM	Gathering rules
+6/14/2018 12:02:46 PM	Gathering data constraint uddt bindings
+6/14/2018 12:02:46 PM	Gathering message types
+6/14/2018 12:02:46 PM	Gathering queues
+6/14/2018 12:02:46 PM	Gathering contracts
+6/14/2018 12:02:46 PM	Gathering services
+6/14/2018 12:02:46 PM	Gathering event notifications
+6/14/2018 12:02:46 PM	Gathering remote service bindings
+6/14/2018 12:02:46 PM	Gathering broker priorities
+6/14/2018 12:02:46 PM	Gathering signatures
+6/14/2018 12:02:46 PM	Gathering data compression options
+6/14/2018 12:02:46 PM	Gathering sequence types
+6/14/2018 12:02:46 PM	Gathering security policies
+6/14/2018 12:02:46 PM	Gather column encryption keys
+6/14/2018 12:02:46 PM	Gathering column master keys
+6/14/2018 12:02:46 PM	Gathering external data sources
+6/14/2018 12:02:46 PM	Gathering external file formats
+6/14/2018 12:02:46 PM	Gathering external tables
+6/14/2018 12:02:46 PM	Gathering extended properties
+6/14/2018 12:02:46 PM	Gathering credentials
+6/14/2018 12:02:46 PM	Gathering logins
+6/14/2018 12:02:46 PM	Gathering server audits
+6/14/2018 12:02:47 PM	Scanning project for duplicate elements
+6/14/2018 12:02:47 PM	Finished duplicate element processing
+6/14/2018 12:02:47 PM	Finished importing database.
+6/14/2018 12:02:47 PM	A summary of the import was saved to the following location: C:\Users\makarova.olga\Documents\GitHub\TestProject\BookCataloque\BookCatalogue.DAL\Import Schema Logs\BookCatalogue.DAL_20180614090241.log
+6/14/2018 12:02:47 PM	Click Finish to continue...
