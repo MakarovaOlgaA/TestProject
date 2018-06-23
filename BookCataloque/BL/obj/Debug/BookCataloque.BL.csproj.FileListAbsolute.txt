@@ -1,0 +1,6 @@
+C:\Users\olgam\Documents\GitHub\TestProject\BookCataloque\BL\bin\Debug\BookCataloque.BL.dll
+C:\Users\olgam\Documents\GitHub\TestProject\BookCataloque\BL\bin\Debug\BookCataloque.BL.pdb
+C:\Users\olgam\Documents\GitHub\TestProject\BookCataloque\BL\obj\Debug\BookCataloque.BL.csprojResolveAssemblyReference.cache
+C:\Users\olgam\Documents\GitHub\TestProject\BookCataloque\BL\obj\Debug\BookCataloque.BL.csproj.CoreCompileInputs.cache
+C:\Users\olgam\Documents\GitHub\TestProject\BookCataloque\BL\obj\Debug\BookCataloque.BL.dll
+C:\Users\olgam\Documents\GitHub\TestProject\BookCataloque\BL\obj\Debug\BookCataloque.BL.pdb
