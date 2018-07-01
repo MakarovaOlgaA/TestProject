@@ -1,6 +1,0 @@
-C:\Users\makarova.olga\Documents\GitHub\TestProject\BookCataloque\BookCatalogue.DAL\bin\Debug\BookCatalogue.DAL.dacpac
-C:\Users\makarova.olga\Documents\GitHub\TestProject\BookCataloque\BookCatalogue.DAL\bin\Debug\BookCatalogue.DAL.dll
-C:\Users\makarova.olga\Documents\GitHub\TestProject\BookCataloque\BookCatalogue.DAL\bin\Debug\BookCatalogue.DAL.pdb
-C:\Users\makarova.olga\Documents\GitHub\TestProject\BookCataloque\BookCatalogue.DAL\obj\Debug\BookCatalogue.DAL.sqlprojAssemblyReference.cache
-C:\Users\makarova.olga\Documents\GitHub\TestProject\BookCataloque\BookCatalogue.DAL\obj\Debug\BookCatalogue.DAL.dll
-C:\Users\makarova.olga\Documents\GitHub\TestProject\BookCataloque\BookCatalogue.DAL\obj\Debug\BookCatalogue.DAL.pdb
