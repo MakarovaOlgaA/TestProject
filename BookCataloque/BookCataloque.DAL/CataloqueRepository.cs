@@ -12,7 +12,7 @@ namespace BookCataloque.DAL
 {
     public class CataloqueRepository : ICataloqueRepository
     {
-        private string connectionString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
 
         public void AddAuthor(IAuthorEM author)
         {

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookCataloque.DAL", "BookCa
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BookCataloque.SSDT", "BookCataloque.SSDT\BookCataloque.SSDT.sqlproj", "{87031929-70DE-4E06-ACCC-546187A157C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookCataloque.BL", "BookCataloque.BL\BookCataloque.BL.csproj", "{9FCA034D-E4BD-4A5E-B56C-D0B1052B19FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{87031929-70DE-4E06-ACCC-546187A157C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87031929-70DE-4E06-ACCC-546187A157C8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{87031929-70DE-4E06-ACCC-546187A157C8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9FCA034D-E4BD-4A5E-B56C-D0B1052B19FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FCA034D-E4BD-4A5E-B56C-D0B1052B19FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FCA034D-E4BD-4A5E-B56C-D0B1052B19FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FCA034D-E4BD-4A5E-B56C-D0B1052B19FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

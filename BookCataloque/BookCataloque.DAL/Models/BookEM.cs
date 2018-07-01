@@ -4,7 +4,7 @@ using BookCataloque.DAL.Interfaces;
 
 namespace BookCataloque.DAL.Models
 {
-    class BookEM: IBookEM
+    public class BookEM: IBookEM
     {
         public BookEM()
         {

@@ -1,13 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using BookCataloque.BL.Interfaces;
 using System.Web.Mvc;
+using Unity.Attributes;
 
 namespace BookCataloque.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IBLCore bl;
+
+        [InjectionConstructor]
+        public HomeController(IBLCore bl)
+        {
+            this.bl = bl;
+        }
+
         public ActionResult Index()
         {
             return View();

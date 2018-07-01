@@ -1,9 +1,0 @@
-C:\Users\olgam\Documents\GitHub\TestProject\BookCataloque\BookCataloque.DAL\bin\Debug\BookCataloque.DAL.dll
-C:\Users\olgam\Documents\GitHub\TestProject\BookCataloque\BookCataloque.DAL\bin\Debug\BookCataloque.DAL.pdb
-C:\Users\olgam\Documents\GitHub\TestProject\BookCataloque\BookCataloque.DAL\bin\Debug\Dapper.dll
-C:\Users\olgam\Documents\GitHub\TestProject\BookCataloque\BookCataloque.DAL\bin\Debug\Dapper.xml
-C:\Users\olgam\Documents\GitHub\TestProject\BookCataloque\BookCataloque.DAL\obj\Debug\BookCataloque.DAL.csprojAssemblyReference.cache
-C:\Users\olgam\Documents\GitHub\TestProject\BookCataloque\BookCataloque.DAL\obj\Debug\BookCataloque.DAL.csproj.CoreCompileInputs.cache
-C:\Users\olgam\Documents\GitHub\TestProject\BookCataloque\BookCataloque.DAL\obj\Debug\BookCataloque.DAL.csproj.CopyComplete
-C:\Users\olgam\Documents\GitHub\TestProject\BookCataloque\BookCataloque.DAL\obj\Debug\BookCataloque.DAL.dll
-C:\Users\olgam\Documents\GitHub\TestProject\BookCataloque\BookCataloque.DAL\obj\Debug\BookCataloque.DAL.pdb
