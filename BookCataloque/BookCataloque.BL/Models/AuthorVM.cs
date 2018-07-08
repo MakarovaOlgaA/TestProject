@@ -1,8 +1,6 @@
-﻿using BookCataloque.BL.Interfaces;
-
-namespace BookCataloque.BL.Models
+﻿namespace BookCataloque.BL.Models
 {
-    public class AuthorVM : IAuthorVM
+    public class AuthorVM
     {
         public int AuthorID { get; set; }
         public string FirstName { get; set; }

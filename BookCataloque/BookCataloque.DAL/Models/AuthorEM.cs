@@ -1,8 +1,6 @@
-﻿using BookCataloque.DAL.Interfaces;
-
-namespace BookCataloque.DAL.Models
+﻿namespace BookCataloque.DAL.Models
 {
-    public class AuthorEM : IAuthorEM
+    public class AuthorEM
     {
         public int AuthorID { get; set; }
         public string FirstName { get; set; }

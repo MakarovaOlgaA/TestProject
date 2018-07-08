@@ -35,7 +35,7 @@ namespace BookCataloque
         public static void RegisterTypes(IUnityContainer container)
         {
             container.RegisterType<IBLCore, BLCore>();
-            container.RegisterType<ICataloqueRepository, CataloqueRepository>();
+            container.RegisterType<IBookRepository, BookRepository>();
         }
     }
 }

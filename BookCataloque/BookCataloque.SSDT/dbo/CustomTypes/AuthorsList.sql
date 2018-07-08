@@ -1,0 +1,2 @@
+﻿CREATE TYPE AuthorsList AS TABLE(AuthorID INT);
+GO

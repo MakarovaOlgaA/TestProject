@@ -44,16 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CataloqueRepository.cs" />
+    <Compile Include="AuthorRepository.cs" />
+    <Compile Include="BookRepository.cs" />
+    <Compile Include="Interfaces\IAuthorRepository.cs" />
     <Compile Include="Models\AuthorEM.cs" />
     <Compile Include="Models\AuthorFilterEM.cs" />
     <Compile Include="Models\BookEM.cs" />
     <Compile Include="Models\BookFilterEM.cs" />
-    <Compile Include="Interfaces\Models\IAuthorEM.cs" />
-    <Compile Include="Interfaces\Models\IAuthorFilterEM.cs" />
-    <Compile Include="Interfaces\Models\IBookEM.cs" />
-    <Compile Include="Interfaces\ICataloqueRepository.cs" />
-    <Compile Include="Interfaces\Models\IBookFilterEM.cs" />
+    <Compile Include="Interfaces\IBookRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

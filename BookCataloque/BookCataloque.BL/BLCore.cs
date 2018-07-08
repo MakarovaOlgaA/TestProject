@@ -8,10 +8,10 @@ namespace BookCataloque.BL
 {
     public class BLCore : IBLCore
     {
-        private ICataloqueRepository repo;
+        private IBookRepository repo;
 
         [InjectionConstructor]
-        public BLCore(ICataloqueRepository repo)
+        public BLCore(IBookRepository repo)
         {
             this.repo = repo;
         }

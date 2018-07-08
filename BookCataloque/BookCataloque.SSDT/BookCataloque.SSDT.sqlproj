@@ -63,14 +63,26 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\DataSeeding" />
     <Folder Include="dbo\DataSeeding\Script.PostDeployment" />
-    <Folder Include="dbo\Triggers" />
+    <Folder Include="dbo\StoredProcedures" />
+    <Folder Include="dbo\CustomTypes" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Authors.sql" />
     <Build Include="dbo\Tables\Books.sql" />
     <Build Include="dbo\Tables\BookAuthors.sql" />
-    <Build Include="dbo\Triggers\BookAuthors_AfterInsert.sql" />
-    <Build Include="dbo\Triggers\BookAuthors_AfterDelete.sql" />
+    <Build Include="dbo\StoredProcedures\USP_GetAuthors.sql" />
+    <Build Include="dbo\StoredProcedures\USP_GetAuthor.sql" />
+    <Build Include="dbo\StoredProcedures\USP_InsertAuthor.sql" />
+    <Build Include="dbo\StoredProcedures\USP_UpdateAuthor.sql" />
+    <Build Include="dbo\StoredProcedures\USP_InsertBookAuthors.sql" />
+    <Build Include="dbo\StoredProcedures\USP_DeleteAuthor.sql" />
+    <Build Include="dbo\StoredProcedures\USP_DeleteBook.sql" />
+    <Build Include="dbo\StoredProcedures\USP_GetBook.sql" />
+    <Build Include="dbo\StoredProcedures\USP_GetBooks.sql" />
+    <Build Include="dbo\StoredProcedures\USP_InsertBook.sql" />
+    <Build Include="dbo\CustomTypes\AuthorsList.sql" />
+    <Build Include="dbo\StoredProcedures\USP_UpdateBook.sql" />
+    <Build Include="dbo\StoredProcedures\USP_UpdateBookAuthors.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="dbo\DataSeeding\Script.PostDeployment.sql" />

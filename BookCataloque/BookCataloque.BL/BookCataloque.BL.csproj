@@ -73,10 +73,6 @@
   <ItemGroup>
     <Compile Include="BLCore.cs" />
     <Compile Include="Interfaces\IBLCore.cs" />
-    <Compile Include="Interfaces\Models\IAuthorVM.cs" />
-    <Compile Include="Interfaces\Models\IAuthorFilterVM.cs" />
-    <Compile Include="Interfaces\Models\IBookVM.cs" />
-    <Compile Include="Interfaces\Models\IBookFilterVM.cs" />
     <Compile Include="Models\AuthorVM.cs" />
     <Compile Include="Models\AuthorFilterVM.cs" />
     <Compile Include="Models\BookVM.cs" />

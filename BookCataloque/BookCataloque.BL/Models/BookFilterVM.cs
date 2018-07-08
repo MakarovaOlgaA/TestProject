@@ -1,9 +1,8 @@
 ﻿using System;
-using BookCataloque.BL.Interfaces;
 
 namespace BookCataloque.BL.Models
 {
-    public class BookFilterVM: IBookFilterVM
+    public class BookFilterVM
     {
         public string Title { get; set; }
 
