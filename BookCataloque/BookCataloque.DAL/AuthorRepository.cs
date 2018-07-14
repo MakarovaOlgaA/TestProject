@@ -1,5 +1,5 @@
-﻿using BookCataloque.DAL.Interfaces;
-using BookCataloque.DAL.Models;
+﻿using BookCataloque.Infrastructure.Data.Models;
+using BookCataloque.Infrastructure.Data;
 using Dapper;
 using System.Collections.Generic;
 using System.Configuration;

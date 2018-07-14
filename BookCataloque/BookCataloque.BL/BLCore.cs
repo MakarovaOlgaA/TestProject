@@ -1,79 +1,95 @@
 ﻿using System.Collections.Generic;
-using BookCataloque.BL.Interfaces;
-using BookCataloque.DAL.Interfaces;
-using AutoMapper;
-using Unity.Attributes;
+using BookCataloque.Infrastructure.Business;
+using BookCataloque.Infrastructure.Business.Models;
+using BookCataloque.Infrastructure.Resolving;
+using BookCataloque.Infrastructure.Data.Models;
+using BookCataloque.Infrastructure.Data;
 
 namespace BookCataloque.BL
 {
     public class BLCore : IBLCore
     {
-        private IBookRepository repo;
+        private IServiceLocator serviceLocator;
+        private IEntityLocator entityLocator;
 
-        [InjectionConstructor]
-        public BLCore(IBookRepository repo)
+        public BLCore(IServiceLocator serviceLocator)
         {
-            this.repo = repo;
+            this.serviceLocator = serviceLocator;
+            this.entityLocator = serviceLocator.GetService<IEntityLocator>();
         }
 
-        public void AddAuthor(IAuthorVM author)
+        public void AddAuthor(AuthorVM author)
         {
-            repo.AddAuthor(Mapper.Map<IAuthorEM>(author));
+            var repo = serviceLocator.GetService<IAuthorRepository>();
+            repo.AddAuthor(entityLocator.ConvertTo<AuthorEM>(author));
         }
 
-        public void AddBook(IBookVM book)
+        public void AddBook(BookVM book)
         {
-            repo.AddBook(Mapper.Map<IBookEM>(book));
+            var repo = serviceLocator.GetService<IBookRepository>();
+            repo.AddBook(entityLocator.ConvertTo<BookEM>(book));
         }
 
         public bool DeleteAuthor(int authorID)
         {
+            var repo = serviceLocator.GetService<IAuthorRepository>();
             return repo.DeleteAuthor(authorID);
         }
 
         public bool DeleteBook(int bookID)
         {
+            var repo = serviceLocator.GetService<IBookRepository>();
             return repo.DeleteBook(bookID);
         }
 
-        public IAuthorVM GetAuthor(int authorID)
+        public AuthorVM GetAuthor(int authorID)
         {
-            return Mapper.Map<IAuthorVM>(repo.GetAuthor(authorID));
+            var repo = serviceLocator.GetService<IAuthorRepository>();
+            return entityLocator.ConvertTo<AuthorVM>(repo.GetAuthor(authorID));
         }
 
-        public IEnumerable<IAuthorVM> GetAuthors()
+        public IEnumerable<AuthorVM> GetAuthors()
         {
-            return Mapper.Map<IEnumerable<IAuthorVM>>(repo.GetAuthors());
+            var repo = serviceLocator.GetService<IAuthorRepository>();
+            return entityLocator.ConvertTo<IEnumerable<AuthorVM>>(repo.GetAuthors());
         }
 
-        public IEnumerable<IAuthorVM> GetAuthors(IAuthorFilterVM filter)
+        public IEnumerable<AuthorVM> GetAuthors(AuthorFilterVM filter)
         {
-            return Mapper.Map<IEnumerable<IAuthorVM>>(repo.GetAuthors(Mapper.Map<IAuthorFilterEM>(filter)));
+            var repo = serviceLocator.GetService<IAuthorRepository>();
+            var authors = repo.GetAuthors(entityLocator.ConvertTo<AuthorFilterEM>(filter));
+            return entityLocator.ConvertTo<IEnumerable<AuthorVM>>(authors);
         }
 
-        public IBookVM GetBook(int bookID)
+        public BookVM GetBook(int bookID)
         {
-            return Mapper.Map<IBookVM>(repo.GetBook(bookID));
+            var repo = serviceLocator.GetService<IBookRepository>();
+            return entityLocator.ConvertTo<BookVM>(repo.GetBook(bookID));
         }
 
-        public IEnumerable<IBookVM> GetBooks()
+        public IEnumerable<BookVM> GetBooks()
         {
-            return Mapper.Map<IEnumerable<IBookVM>>(repo.GetBooks());
+            var repo = serviceLocator.GetService<IBookRepository>();
+            return entityLocator.ConvertTo<IEnumerable<BookVM>>(repo.GetBooks());
         }
 
-        public IEnumerable<IBookVM> GetBooks(IBookFilterVM filter)
+        public IEnumerable<BookVM> GetBooks(BookFilterVM filter)
         {
-            return Mapper.Map<IEnumerable<IBookVM>>(repo.GetBooks(Mapper.Map<IBookFilterEM>(filter)));
+            var repo = serviceLocator.GetService<IBookRepository>();
+            var books = repo.GetBooks(entityLocator.ConvertTo<BookFilterEM>(filter));
+            return entityLocator.ConvertTo<IEnumerable<BookVM>>(books);
         }
 
-        public bool UpdateAuthor(IAuthorVM author)
+        public bool UpdateAuthor(AuthorVM author)
         {
-            return repo.UpdateAuthor(Mapper.Map<IAuthorEM>(author));
+            var repo = serviceLocator.GetService<IAuthorRepository>();
+            return repo.UpdateAuthor(entityLocator.ConvertTo<AuthorEM>(author));
         }
 
-        public bool UpdateBook(IBookVM book)
+        public bool UpdateBook(BookVM book)
         {
-            return repo.UpdateBook(Mapper.Map<IBookEM>(book));
+            var repo = serviceLocator.GetService<IBookRepository>();
+            return repo.UpdateBook(entityLocator.ConvertTo<BookEM>(book));
         }
     }
 }

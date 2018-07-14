@@ -46,15 +46,14 @@
   <ItemGroup>
     <Compile Include="AuthorRepository.cs" />
     <Compile Include="BookRepository.cs" />
-    <Compile Include="Interfaces\IAuthorRepository.cs" />
-    <Compile Include="Models\AuthorEM.cs" />
-    <Compile Include="Models\AuthorFilterEM.cs" />
-    <Compile Include="Models\BookEM.cs" />
-    <Compile Include="Models\BookFilterEM.cs" />
-    <Compile Include="Interfaces\IBookRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BookCataloque.Infrastructure\BookCataloque.Infrastructure.csproj">
+      <Project>{6b616b4c-e21c-4139-99f0-f60d55f8065d}</Project>
+      <Name>BookCataloque.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

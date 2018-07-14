@@ -4,8 +4,8 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using BookCataloque.DAL.Interfaces;
-using BookCataloque.DAL.Models;
+using BookCataloque.Infrastructure.Data.Models;
+using BookCataloque.Infrastructure.Data;
 using Dapper;
 
 namespace BookCataloque.DAL
