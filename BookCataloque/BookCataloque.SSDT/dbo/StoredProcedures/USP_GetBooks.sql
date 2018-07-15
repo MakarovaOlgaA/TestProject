@@ -1,10 +1,12 @@
-﻿CREATE PROCEDURE [dbo].[USP_GetBooks] @Title                     NVARCHAR(100), 
-                                      @RatingLowerBound          TINYINT, 
-                                      @RatingUpperBound          TINYINT, 
-                                      @PublicationDateLowerBound DATE, 
-                                      @PublicationDateUpperBound DATE, 
-                                      @PagesLowerBound           SMALLINT, 
-                                      @PagesUpperBound           SMALLINT
+﻿CREATE PROCEDURE [dbo].[USP_GetBooks] @Title                     NVARCHAR(100) = NULL, 
+                                      @RatingLowerBound          TINYINT       = NULL, 
+                                      @RatingUpperBound          TINYINT       = NULL, 
+                                      @PublicationDateLowerBound DATE          = NULL, 
+                                      @PublicationDateUpperBound DATE          = NULL, 
+                                      @PagesLowerBound           SMALLINT      = NULL, 
+                                      @PagesUpperBound           SMALLINT      = NULL, 
+                                      @PageNumber                INT           = 1, 
+                                      @PageSize                  INT           = 1000
 AS
      SELECT [Books].[BookID], 
             [Title], 
@@ -17,8 +19,7 @@ AS
      (
          SELECT COUNT(*)
          FROM [BookAuthors]
-         WHERE [BookID] = [Books].[BookID]
-               AND [AuthorID] = [Authors].[AuthorID]
+         WHERE [AuthorID] = [Authors].[AuthorID]
      ) AS [NumberOfBooks]
      FROM [Books]
           INNER JOIN [BookAuthors] ON [BookAuthors].[BookID] = [Books].[BookID]
@@ -31,5 +32,6 @@ AS
            AND [PublicationDate] <= ISNULL(@PublicationDateUpperBound, [PublicationDate])
            AND [Pages] >= ISNULL(@PagesLowerBound, [Pages])
            AND [Pages] <= ISNULL(@PagesUpperBound, [Pages])
-     ORDER BY [Title];
+     ORDER BY [Title]
+     OFFSET @PageSize * (@PageNumber - 1) ROWS FETCH NEXT @PageSize ROWS ONLY;
 GO

@@ -25,6 +25,9 @@ namespace BookCataloque
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/book-grid").Include(
+                      "~/Scripts/Books/book-grid.js"));
         }
     }
 }

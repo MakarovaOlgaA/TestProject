@@ -11,8 +11,7 @@ AS
      (
          SELECT COUNT(*)
          FROM [BookAuthors]
-         WHERE [BookID] = @BookID
-               AND [AuthorID] = [BookAuthors].[AuthorID]
+         WHERE [AuthorID] = [BookAuthors].[AuthorID]
      ) AS [NumberOfBooks]
      FROM [Books]
           INNER JOIN [BookAuthors] ON [BookAuthors].[BookID] = [Books].[BookID]
