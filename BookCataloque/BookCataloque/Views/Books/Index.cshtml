@@ -1,49 +1,46 @@
 ﻿@model IEnumerable<BookCataloque.Infrastructure.Business.Models.BookVM>
 
 <div class="well row">
-    <form>
-        <div class="form-group col-sm-4">
+    <form id="filterForm">
+        <div class="form-group col-sm-2">
             <div>
                 <label>Rating</label>
             </div>
             <div>
-                <input type="number" min="1" step="1" class="form-control" id="ratingLowerBound" placeholder="From">
+                <input type="number" min="1" step="1" class="form-control" id="ratingLowerBound" placeholder="From" data-bind="value: RatingLowerBound">
             </div>
             <div>
-                <input type="number" min="1" step="1" class="form-control" id="ratingUpperBound" placeholder="To">
+                <input type="number" min="1" step="1" class="form-control" id="ratingUpperBound" placeholder="To" data-bind="value: RatingUpperBound">
             </div>
         </div>
 
-        <div class="form-group col-sm-4">
+        <div class="form-group col-sm-3">
             <label>Publication Date</label>
-            <div class="input-group" id="publicationDateLowerBound">
-                <input type="text" class="form-control datepicker" placeholder="From">
+            <div class="input-group">
+                <input type="text" class="form-control datepicker" id="publicationDateLowerBound" placeholder="From" data-bind="value: PublicationDateLowerBound">
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
             </div>
-            <div class="input-group" id="publicationDateUpperBound">
-                <input type="text" class="form-control datepicker" placeholder="To">
+            <div class="input-group">
+                <input type="text" id="publicationDateUpperBound" class="form-control datepicker" placeholder="To" data-bind="value: PublicationDateUpperBound">
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
             </div>
+        </div>
+
+        <div class="form-group col-sm-3">
+            <label>Pages</label>
+            <input type="number" min="1" step="1" class="form-control" id="pagesLowerBound" placeholder="From" data-bind="value: PagesLowerBound">
+            <input type="number" min="1" step="1" class="form-control" id="pagesUpperBound" placeholder="To" data-bind="value: PagesUpperBound">
         </div>
 
         <div class="form-group col-sm-4">
-            <label>Pages</label>
-            <input type="number" min="1" step="1" class="form-control" id="pagesLowerBound" placeholder="From">
-            <input type="number" min="1" step="1" class="form-control" id="pagesUpperBound" placeholder="To">
-        </div>
-
-        <div class="form-group form-inline col-sm-8">
             <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" placeholder="Book Title">
+            <input type="text" class="form-control" id="title" placeholder="Book Title" data-bind="value: Title">
+            <button type="submit" class="btn btn-primary btn-block" data-bind="enable: IsValid">Search</button>
         </div>
-        <div class="col-sm-4">
-            <button type="submit" class="btn btn-primary btn-block">Search</button>
-        </div>
-
     </form>
 </div>
 
@@ -62,16 +59,15 @@
             <tbody></tbody>
         </table>
 
-        @Scripts.Render("~/bundles/book-grid")
+        @Scripts.Render("~/bundles/book-search")
 
         @section scripts {
             <script>
 
                 $(document).ready(function () {
-                    $('.datepicker').datetimepicker({
-                        viewMode: 'days',
-                        format: 'DD.MM.YYYY'
-                    });
+                    BookFilter.Initialize();
+
+                    
 
                     $('#tbl_books').dataTable({
                         "processing": true,
