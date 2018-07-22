@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BookCataloque.Infrastructure.Data.Models
+namespace BookCataloque.EntityModel
 {
     public class BookFilterEM
     {

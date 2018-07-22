@@ -44,16 +44,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorDM.cs" />
     <Compile Include="BLCore.cs" />
+    <Compile Include="BookDM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BookCataloque.EntityModel\BookCataloque.EntityModel.csproj">
+      <Project>{D83DB0EC-2C73-4C8D-A117-F4A69E5667CA}</Project>
+      <Name>BookCataloque.EntityModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BookCataloque.Infrastructure\BookCataloque.Infrastructure.csproj">
       <Project>{6b616b4c-e21c-4139-99f0-f60d55f8065d}</Project>
       <Name>BookCataloque.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BookCataloque.ViewModel\BookCataloque.ViewModel.csproj">
+      <Project>{459AFAE6-B3D8-45D6-8613-ACF31AAFCF6D}</Project>
+      <Name>BookCataloque.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

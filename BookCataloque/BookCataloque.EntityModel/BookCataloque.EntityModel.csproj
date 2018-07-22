@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{049B8B36-5E4C-477B-A69E-ADD9A14BF298}</ProjectGuid>
+    <ProjectGuid>{D83DB0EC-2C73-4C8D-A117-F4A69E5667CA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BookCataloque.DAL</RootNamespace>
-    <AssemblyName>BookCataloque.DAL</AssemblyName>
+    <RootNamespace>BookCataloque.EntityModel</RootNamespace>
+    <AssemblyName>BookCataloque.EntityModel</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,11 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,23 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthorRepository.cs" />
-    <Compile Include="BookRepository.cs" />
-    <Compile Include="DALCore.cs" />
+    <Compile Include="AuthorEM.cs" />
+    <Compile Include="AuthorFilterEM.cs" />
+    <Compile Include="BookEM.cs" />
+    <Compile Include="BookFilterEM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BookCataloque.EntityModel\BookCataloque.EntityModel.csproj">
-      <Project>{D83DB0EC-2C73-4C8D-A117-F4A69E5667CA}</Project>
-      <Name>BookCataloque.EntityModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BookCataloque.Infrastructure\BookCataloque.Infrastructure.csproj">
-      <Project>{6b616b4c-e21c-4139-99f0-f60d55f8065d}</Project>
-      <Name>BookCataloque.Infrastructure</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

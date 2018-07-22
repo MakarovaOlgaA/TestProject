@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace BookCataloque.Infrastructure.Business.Models
+namespace BookCataloque.ViewModel
 {
     public class BookVM
     {

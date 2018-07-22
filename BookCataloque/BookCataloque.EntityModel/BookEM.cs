@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BookCataloque.Infrastructure.Data.Models
+namespace BookCataloque.EntityModel
 {
     public class BookEM
     {

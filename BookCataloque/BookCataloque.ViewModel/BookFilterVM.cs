@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace BookCataloque.Infrastructure.Business.Models
+namespace BookCataloque.ViewModel
 {
     public class BookFilterVM
     {

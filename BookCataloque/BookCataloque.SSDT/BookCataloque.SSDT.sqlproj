@@ -83,6 +83,7 @@
     <Build Include="dbo\CustomTypes\AuthorsList.sql" />
     <Build Include="dbo\StoredProcedures\USP_UpdateBook.sql" />
     <Build Include="dbo\StoredProcedures\USP_UpdateBookAuthors.sql" />
+    <Build Include="dbo\StoredProcedures\USP_GetAuthorByName.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="dbo\DataSeeding\Script.PostDeployment.sql" />

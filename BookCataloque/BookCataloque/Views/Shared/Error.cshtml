@@ -1,5 +1,14 @@
-﻿@{
+﻿@model string
+
+@{
     ViewBag.Title = "Oops!";
+
+    string message = Model;
+    if (ViewBag.StatusCode != null)
+    {
+        message = String.Format("Error {0}: {1}", ViewBag.StatusCode, message);
+    }
 }
+
 <h1 class="text-danger">Oops! An error occured.</h1>
-<h3 class="text-danger">An error occurred while processing your request: @ViewBag.Message</h3>
+<h3 class="text-danger">An error occurred while processing your request. @message</h3>

@@ -1,5 +1,6 @@
 ﻿using BookCataloque.Infrastructure.Business;
 using System.Web.Mvc;
+using BookCataloque.ViewModel;
 
 namespace BookCataloque.Controllers
 {
@@ -7,8 +8,15 @@ namespace BookCataloque.Controllers
     {
         public ActionResult Index()
         {
-            var books = Factory.GetService<IBLCore>().GetBooks();
-            //var b = l.GetBook(1);
+            SearchInfoVM searchInfo = new SearchInfoVM()
+            {
+                CurrentPage = 1,
+                PageSize = 100,
+                OrderingInfo = new OrderingInfoVM { ColumnName = "Title" }
+            };
+
+            var books = Factory.GetService<IBookDM>().GetBooks(searchInfo, out FilteredInfoVM filteredInfo);
+
             return View(books);
         }
     }

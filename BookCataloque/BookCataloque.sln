@@ -18,6 +18,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookCataloque.Bootstrap", "
 		{6B616B4C-E21C-4139-99F0-F60D55F8065D} = {6B616B4C-E21C-4139-99F0-F60D55F8065D}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookCataloque.ViewModel", "BookCataloque.ViewModel\BookCataloque.ViewModel.csproj", "{459AFAE6-B3D8-45D6-8613-ACF31AAFCF6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookCataloque.EntityModel", "BookCataloque.EntityModel\BookCataloque.EntityModel.csproj", "{D83DB0EC-2C73-4C8D-A117-F4A69E5667CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +54,14 @@ Global
 		{E3348EBA-7F68-4821-8800-B28D06DF7C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3348EBA-7F68-4821-8800-B28D06DF7C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3348EBA-7F68-4821-8800-B28D06DF7C85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{459AFAE6-B3D8-45D6-8613-ACF31AAFCF6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{459AFAE6-B3D8-45D6-8613-ACF31AAFCF6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{459AFAE6-B3D8-45D6-8613-ACF31AAFCF6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{459AFAE6-B3D8-45D6-8613-ACF31AAFCF6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D83DB0EC-2C73-4C8D-A117-F4A69E5667CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D83DB0EC-2C73-4C8D-A117-F4A69E5667CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D83DB0EC-2C73-4C8D-A117-F4A69E5667CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D83DB0EC-2C73-4C8D-A117-F4A69E5667CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

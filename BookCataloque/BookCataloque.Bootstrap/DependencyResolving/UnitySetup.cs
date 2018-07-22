@@ -38,7 +38,8 @@ namespace BookCataloque.Bootstrap.DependencyResolving
         {
             container.RegisterType<IServiceLocator>(new InjectionFactory(c => CreateFactory()));
             container.RegisterType<IEntityLocator, EntityLocator>();
-            container.RegisterType<IBLCore, BLCore>();
+            container.RegisterType<IBookDM, BookDM>();
+            container.RegisterType<IAuthorDM, AuthorDM>();
             container.RegisterType<IBookRepository, BookRepository>();
             container.RegisterType<IAuthorRepository, AuthorRepository>();
         }

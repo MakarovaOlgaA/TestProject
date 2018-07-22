@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using BookCataloque.Infrastructure.Business.Models;
-using BookCataloque.Infrastructure.Data.Models;
+using BookCataloque.EntityModel;
+using BookCataloque.ViewModel;
 
 namespace BookCataloque.Bootstrap.Mapping
 {

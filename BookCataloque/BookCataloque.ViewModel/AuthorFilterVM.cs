@@ -1,6 +1,6 @@
-﻿namespace BookCataloque.Infrastructure.Data.Models
+﻿namespace BookCataloque.ViewModel
 {
-    public class AuthorFilterEM
+    public class AuthorFilterVM
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

@@ -1,6 +1,5 @@
 ﻿using BookCataloque.Bootstrap.DependencyResolving;
 using BookCataloque.Infrastructure.Resolving;
-using System.Web;
 using System.Web.Mvc;
 
 namespace BookCataloque.Controllers
@@ -21,16 +20,15 @@ namespace BookCataloque.Controllers
         {
             if (!filterContext.ExceptionHandled)
             {
-                if (filterContext.Exception is HttpException)
-                {
-                    ViewBag.StatusCode = ((HttpException)filterContext.Exception).GetHttpCode();
-                }
-
-                ViewBag.Message = filterContext.Exception.Message;
-                filterContext.Result = View("Error");
-
+                filterContext.Result = Error(filterContext.Exception.Message);
                 filterContext.ExceptionHandled = true;
             }
+        }
+
+        public ActionResult Error(string errorMessage, int? statusCode = null)
+        {
+            ViewBag.StatusCode = statusCode;
+            return View("Error", model: errorMessage);
         }
     }
 }
