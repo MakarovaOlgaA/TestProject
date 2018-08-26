@@ -12,7 +12,7 @@ namespace BookCataloque.EntityModel
         public int BookID { get; set; }
         public string Title { get; set; }
         public DateTime PublicationDate { get; set; }
-        public byte? Rating { get; set; }
+        public float? Rating { get; set; }
         public short Pages { get; set; }
         public IList<AuthorEM> Authors { get; set; }
     }

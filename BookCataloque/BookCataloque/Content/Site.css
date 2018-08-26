@@ -1,4 +1,12 @@
-﻿
+﻿.errorStyle {
+    background-color: #ffd800;
+    color: #808080;
+    font-size: 13px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    margin-top: 7px;
+} 
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;

@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<BookCataloque.ViewModel.BookVM>
-
+@{ 
+    string dateFormat = "DD.MM.YYYY";
+}
 <div class="well row">
     <form id="filterForm">
         <div class="form-group col-sm-2">
@@ -7,23 +9,23 @@
                 <label>Rating</label>
             </div>
             <div>
-                <input type="number" min="1" step="1" class="form-control" id="ratingLowerBound" placeholder="From" data-bind="value: RatingLowerBound">
+                <input type="number" class="form-control" id="ratingLowerBound" placeholder="From" data-bind="value: RatingLowerBound, valueUpdate: 'afterkeydown'">
             </div>
             <div>
-                <input type="number" min="1" step="1" class="form-control" id="ratingUpperBound" placeholder="To" data-bind="value: RatingUpperBound">
+                <input type="number" class="form-control" id="ratingUpperBound" placeholder="To" data-bind="value: RatingUpperBound, valueUpdate: 'afterkeydown'">
             </div>
         </div>
 
         <div class="form-group col-sm-3">
             <label>Publication Date</label>
             <div class="input-group">
-                <input type="text" class="form-control datepicker" id="publicationDateLowerBound" placeholder="From" data-bind="value: PublicationDateLowerBound">
+                <input type="text" class="form-control datepicker" id="publicationDateLowerBound" placeholder="From" data-bind="datepicker: PublicationDateLowerBound, datepickerOptions: { viewMode: 'days', format: '@dateFormat' }">
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
             </div>
             <div class="input-group">
-                <input type="text" id="publicationDateUpperBound" class="form-control datepicker" placeholder="To" data-bind="value: PublicationDateUpperBound">
+                <input type="text" id="publicationDateUpperBound" class="form-control datepicker" placeholder="To" data-bind="datepicker: PublicationDateUpperBound, datepickerOptions: { viewMode: 'days', format: '@dateFormat' }">
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -32,47 +34,49 @@
 
         <div class="form-group col-sm-3">
             <label>Pages</label>
-            <input type="number" min="1" step="1" class="form-control" id="pagesLowerBound" placeholder="From" data-bind="value: PagesLowerBound">
-            <input type="number" min="1" step="1" class="form-control" id="pagesUpperBound" placeholder="To" data-bind="value: PagesUpperBound">
+            <input type="number" class="form-control" id="pagesLowerBound" placeholder="From" data-bind="value: PagesLowerBound, valueUpdate: 'afterkeydown'">
+            <input type="number" class="form-control" id="pagesUpperBound" placeholder="To" data-bind="value: PagesUpperBound, valueUpdate: 'afterkeydown'">
         </div>
 
         <div class="form-group col-sm-4">
             <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" placeholder="Book Title" data-bind="value: Title">
-            <button type="submit" class="btn btn-primary btn-block" data-bind="enable: IsValid">Search</button>
+            <input type="text" class="form-control" id="title" placeholder="Book Title" data-bind="value: Title, valueUpdate: 'afterkeydown'">
+            <button type="submit" class="btn btn-primary" data-bind="click: Search">Search</button>
         </div>
     </form>
 </div>
 
-        <table id="tbl_books" class="table table-striped table-bordered" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Publication Date</th>
-                    <th>Rating</th>
-                    <th>Pages</th>
-                    <th>Authors</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+<table id="tbl_books" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Publication Date</th>
+            <th>Rating</th>
+            <th>Pages</th>
+            <th>Authors</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
 
-        @Scripts.Render("~/bundles/book-search")
+@Scripts.Render("~/bundles/book-search")
+@Scripts.Render("~/bundles/ko-validation")
 
-        @section scripts {
-            <script>
+@section scripts {
+    <script>
 
-                $(document).ready(function () {
-                    BookFilter.Initialize();
+        $(document).ready(function () {
+            BookFilter.filterForm = '#filterForm';
 
                     
+            BookFilter.Initialize();
 
-                    $('#tbl_books').dataTable({
-                        "processing": true,
-                        "serverSide": true
-                    });
-                });
-            </script>
-        }
+            $('#tbl_books').dataTable({
+				"processing": true,
+				"serverSide": true
+            });
+        });
+    </script>
+}

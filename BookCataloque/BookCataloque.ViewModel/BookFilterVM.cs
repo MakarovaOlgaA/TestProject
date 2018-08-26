@@ -9,10 +9,10 @@ namespace BookCataloque.ViewModel
         public string Title { get; set; }
 
         [Range(0, 10, ErrorMessage = "Rating has to be between 0 an 10")]
-        public byte? RatingLowerBound { get; set; }
+        public float? RatingLowerBound { get; set; }
 
         [Range(0, 10, ErrorMessage = "Rating has to be between 0 an 10")]
-        public byte? RatingUpperBound { get; set; }
+        public float? RatingUpperBound { get; set; }
 
         [PastDate]
         public DateTime? PublicationDateUpperBound { get; set; }

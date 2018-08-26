@@ -18,7 +18,7 @@ namespace BookCataloque.ViewModel
         public DateTime PublicationDate { get; set; }
 
         [Range(0, 10, ErrorMessage = "Rating has to be between 0 an 10")]
-        public byte? Rating { get; set; }
+        public float? Rating { get; set; }
 
         [Required(ErrorMessage = "Number of pages is required")]
         [Range(1, short.MaxValue, ErrorMessage = "Number of pages is either less than 1 or too large")]

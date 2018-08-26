@@ -6,8 +6,8 @@ namespace BookCataloque.EntityModel
     {
         public string Title { get; set; }
 
-        public byte? RatingLowerBound { get; set; }
-        public byte? RatingUpperBound { get; set; }
+        public float? RatingLowerBound { get; set; }
+        public float? RatingUpperBound { get; set; }
 
         public DateTime? PublicationDateUpperBound { get; set; }
         public DateTime? PublicationDateLowerBound { get; set; }

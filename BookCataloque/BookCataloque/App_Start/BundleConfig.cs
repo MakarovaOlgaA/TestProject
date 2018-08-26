@@ -11,7 +11,12 @@ namespace BookCataloque
             bundles.Add(new ScriptBundle("~/bundles/base-bundle").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootstrap.js",
-                        "~/Scripts/knockout-{version}.js"));
+                        "~/Scripts/knockout-{version}.js",
+                        "~/Scripts/Extensions/ko-custom-bindings.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/ko-validation").Include(
+                        "~/Scripts/knockout.validation.js",
+                        "~/Scripts/Extensions/ko-validation-rules.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
