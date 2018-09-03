@@ -29,3 +29,19 @@ ko.validation.rules['integer'] = {
 };
 
 ko.validation.registerExtenders();
+
+/*custom bindingHandler for error message*/
+ko.bindingHandlers.validationCore = {
+    init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+        var span = document.createElement('span');
+        span.className = 'errorStyle';
+        var parent = $(element).parent().closest
+            (".input-group");
+        if (parent.length > 0) {
+            $(parent).after(span);
+        } else {
+            $(element).after(span);
+        }
+        ko.applyBindingsToNode(span, { validationMessage: valueAccessor() });
+    }
+};

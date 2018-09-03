@@ -13,17 +13,18 @@
 AS
      SELECT @Total = COUNT(*)
      FROM [Books];
-     SELECT *
+
+     SELECT [BookID], [Title], [PublicationDate], [Rating], [Pages], [AuthorID], [FirstName], [LastName], [NumberOfBooks]
      FROM
      (
          SELECT DENSE_RANK() OVER(ORDER BY CASE
                                                WHEN @SortColumn = 'BookID'
                                                     AND @DescendingOrder = 1
-                                               THEN [Books].[BookID]
+                                               THEN [b].[BookID]
                                            END DESC,
                                            CASE
                                                WHEN @SortColumn = 'BookID'
-                                               THEN [Books].[BookID]
+                                               THEN [b].[BookID]
                                            END,
                                            CASE
                                                WHEN @SortColumn = 'Title'
@@ -61,30 +62,23 @@ AS
                                                WHEN @SortColumn = 'Pages'
                                                THEN [Pages]
                                            END) AS [BookNum], 
-                [Books].[BookID], 
-                [Title], 
-                [PublicationDate], 
-                [Rating], 
-                [Pages], 
-                [Authors].[AuthorID], 
-                [FirstName], 
-                [LastName], 
+                [b].*, 
+                [a].*, 
          (
              SELECT COUNT(*)
              FROM [BookAuthors]
-             WHERE [AuthorID] = [Authors].[AuthorID]
+             WHERE [AuthorID] = [a].[AuthorID]
          ) AS [NumberOfBooks]
-         FROM [Books]
-              INNER JOIN [BookAuthors] ON [BookAuthors].[BookID] = [Books].[BookID]
-              INNER JOIN [Authors] ON [Authors].[AuthorID] = [BookAuthors].[AuthorID]
-         WHERE [Title] LIKE('%'+ISNULL(@Title, [Title])+'%')
-               AND ([Rating] IS NULL
-                    OR ([Rating] >= ISNULL(@RatingLowerBound, [Rating])
-                        AND [Rating] <= ISNULL(@RatingUpperBound, [Rating])))
-               AND [PublicationDate] >= ISNULL(@PublicationDateLowerBound, [PublicationDate])
-               AND [PublicationDate] <= ISNULL(@PublicationDateUpperBound, [PublicationDate])
-               AND [Pages] >= ISNULL(@PagesLowerBound, [Pages])
-               AND [Pages] <= ISNULL(@PagesUpperBound, [Pages])
+         FROM [Books] [b]
+              INNER JOIN [BookAuthors] [ba] ON [ba].[BookID] = [b].[BookID]
+              INNER JOIN [Authors] [a] ON [a].[AuthorID] = [ba].[AuthorID]
+         WHERE (@Title IS NULL OR [Title] LIKE '%'+@Title+'%')
+               AND (@RatingLowerBound IS NULL OR [Rating] >= @RatingLowerBound)
+			   AND (@RatingUpperBound IS NULL OR [Rating] <= @RatingLowerBound)
+               AND (@PublicationDateLowerBound IS NULL OR [PublicationDate] >= @PublicationDateLowerBound)
+               AND (@PublicationDateUpperBound IS NULL OR [PublicationDate] <= @PublicationDateUpperBound)
+               AND (@PagesLowerBound IS NULL OR [Pages] >= @PagesLowerBound)
+			   AND (@PagesUpperBound IS NULL OR [Pages] <= @PagesUpperBound)
      ) t
-     WHERE t.[BookNum] BETWEEN(@PageNumber - 1) * (@PageSize + 1) AND @PageNumber * @PageSize;
+     WHERE t.[BookNum] BETWEEN @PageNumber * (@PageSize + 1) AND (@PageNumber + 1) * @PageSize;
 GO

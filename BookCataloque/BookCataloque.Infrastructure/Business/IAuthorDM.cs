@@ -9,9 +9,9 @@ namespace BookCataloque.Infrastructure.Business
 
         AuthorVM GetAuthor(int authorID);
         AuthorVM GetAuthor(string firstName, string lastName);
+        //AuthorVM GetAuthors(string searchString);
 
-        IEnumerable<AuthorVM> GetAuthors(SearchInfoVM searchInfo, out FilteredInfoVM filteredInfo);
-        IEnumerable<AuthorVM> GetAuthors(AuthorFilterVM filter, SearchInfoVM searchInfo, out FilteredInfoVM filteredInfo);
+        IEnumerable<AuthorVM> GetAuthors(AuthorFilterVM filter, out int total, out int filtered);
 
         bool UpdateAuthor(AuthorVM author);
 

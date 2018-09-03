@@ -45,12 +45,13 @@
     <Compile Include="AuthorVM.cs" />
     <Compile Include="BookFilterVM.cs" />
     <Compile Include="BookVM.cs" />
+    <Compile Include="ColumnVM.cs" />
+    <Compile Include="DataTableInfoVM.cs" />
     <Compile Include="Extensions\Attributes\NonEmptyCollectionAttribute.cs" />
     <Compile Include="Extensions\Attributes\PastDateAttribute.cs" />
-    <Compile Include="FilteredInfoVM.cs" />
     <Compile Include="OrderingInfoVM.cs" />
+    <Compile Include="OrderVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchInfoVM.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

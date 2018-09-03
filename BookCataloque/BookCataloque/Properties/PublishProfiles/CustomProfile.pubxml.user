@@ -28,46 +28,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/02/2018 02:19:03</publishTime>
     </File>
     <File Include="bin/BookCataloque.BL.dll">
-      <publishTime>08/26/2018 17:53:52</publishTime>
+      <publishTime>09/03/2018 00:52:16</publishTime>
     </File>
     <File Include="bin/BookCataloque.BL.pdb">
-      <publishTime>08/26/2018 17:53:52</publishTime>
+      <publishTime>09/03/2018 00:52:16</publishTime>
     </File>
     <File Include="bin/BookCataloque.Bootstrap.dll">
-      <publishTime>08/26/2018 17:53:54</publishTime>
+      <publishTime>09/03/2018 16:19:48</publishTime>
     </File>
     <File Include="bin/BookCataloque.Bootstrap.pdb">
-      <publishTime>08/26/2018 17:53:54</publishTime>
+      <publishTime>09/03/2018 16:19:48</publishTime>
     </File>
     <File Include="bin/BookCataloque.DAL.dll">
-      <publishTime>08/26/2018 17:53:51</publishTime>
+      <publishTime>09/03/2018 16:19:43</publishTime>
     </File>
     <File Include="bin/BookCataloque.DAL.pdb">
-      <publishTime>08/26/2018 17:53:51</publishTime>
+      <publishTime>09/03/2018 16:19:43</publishTime>
     </File>
     <File Include="bin/BookCataloque.dll">
-      <publishTime>08/26/2018 19:26:17</publishTime>
+      <publishTime>09/03/2018 18:31:26</publishTime>
     </File>
     <File Include="bin/BookCataloque.EntityModel.dll">
-      <publishTime>08/25/2018 23:01:16</publishTime>
+      <publishTime>09/02/2018 21:01:38</publishTime>
     </File>
     <File Include="bin/BookCataloque.EntityModel.pdb">
-      <publishTime>08/25/2018 23:01:16</publishTime>
+      <publishTime>09/02/2018 21:01:38</publishTime>
     </File>
     <File Include="bin/BookCataloque.Infrastructure.dll">
-      <publishTime>08/26/2018 17:53:50</publishTime>
+      <publishTime>09/03/2018 00:52:16</publishTime>
     </File>
     <File Include="bin/BookCataloque.Infrastructure.pdb">
-      <publishTime>08/26/2018 17:53:50</publishTime>
+      <publishTime>09/03/2018 00:52:16</publishTime>
     </File>
     <File Include="bin/BookCataloque.Model.dll">
-      <publishTime>08/26/2018 17:53:49</publishTime>
+      <publishTime>09/02/2018 21:40:59</publishTime>
     </File>
     <File Include="bin/BookCataloque.Model.pdb">
-      <publishTime>08/26/2018 17:53:49</publishTime>
+      <publishTime>09/02/2018 21:40:59</publishTime>
     </File>
     <File Include="bin/BookCataloque.pdb">
-      <publishTime>08/26/2018 19:26:17</publishTime>
+      <publishTime>09/03/2018 18:31:26</publishTime>
     </File>
     <File Include="bin/CommonServiceLocator.dll">
       <publishTime>07/02/2018 00:59:36</publishTime>
@@ -699,11 +699,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="package.json">
       <publishTime>07/15/2018 19:13:38</publishTime>
     </File>
+    <File Include="Scripts/Books/book-editor.js">
+      <publishTime>09/03/2018 18:57:28</publishTime>
+    </File>
     <File Include="Scripts/Books/book-filter.js">
-      <publishTime>08/26/2018 23:14:07</publishTime>
+      <publishTime>09/03/2018 19:21:26</publishTime>
     </File>
     <File Include="Scripts/Books/book-grid.js">
-      <publishTime>07/15/2018 20:50:19</publishTime>
+      <publishTime>09/03/2018 19:21:43</publishTime>
     </File>
     <File Include="Scripts/bootstrap-datetimepicker.js">
       <publishTime>07/16/2018 01:34:46</publishTime>
@@ -781,10 +784,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/15/2018 19:54:03</publishTime>
     </File>
     <File Include="Scripts/Extensions/ko-custom-bindings.js">
-      <publishTime>08/26/2018 23:38:44</publishTime>
+      <publishTime>09/03/2018 17:05:00</publishTime>
     </File>
     <File Include="Scripts/Extensions/ko-validation-rules.js">
-      <publishTime>08/26/2018 23:40:30</publishTime>
+      <publishTime>09/03/2018 17:05:10</publishTime>
+    </File>
+    <File Include="Scripts/global-settings.js">
+      <publishTime>09/03/2018 18:22:37</publishTime>
     </File>
     <File Include="Scripts/jquery-3.3.1.js">
       <publishTime>06/23/2018 17:32:42</publishTime>
@@ -843,8 +849,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/moment.min.js">
       <publishTime>07/16/2018 01:34:45</publishTime>
     </File>
+    <File Include="Views/Authors/Details.cshtml">
+      <publishTime>09/03/2018 13:54:13</publishTime>
+    </File>
+    <File Include="Views/Books/BookEditingModal.cshtml">
+      <publishTime>09/03/2018 17:11:26</publishTime>
+    </File>
     <File Include="Views/Books/Index.cshtml">
-      <publishTime>08/26/2018 23:34:04</publishTime>
+      <publishTime>09/03/2018 21:05:09</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>06/23/2018 17:32:42</publishTime>
@@ -859,7 +871,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/23/2018 01:25:48</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>07/17/2018 01:16:38</publishTime>
+      <publishTime>09/03/2018 18:30:44</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>06/23/2018 17:32:42</publishTime>
@@ -868,7 +880,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/23/2018 17:32:42</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/25/2018 23:01:49</publishTime>
+      <publishTime>09/02/2018 21:45:11</publishTime>
     </File>
   </ItemGroup>
 </Project>

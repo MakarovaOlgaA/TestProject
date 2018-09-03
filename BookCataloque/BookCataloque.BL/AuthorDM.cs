@@ -38,29 +38,26 @@ namespace BookCataloque.BL
             var repo = serviceLocator.GetService<IAuthorRepository>();
             return entityLocator.ConvertTo<AuthorVM>(repo.GetAuthor(firstName, lastName));
         }
-
-        public IEnumerable<AuthorVM> GetAuthors(SearchInfoVM searchInfo, out FilteredInfoVM filteredInfo)
+       
+        public IEnumerable<AuthorVM> GetAuthors(AuthorFilterVM filter, out int total, out int filtered)
         {
             var repo = serviceLocator.GetService<IAuthorRepository>();
+            IEnumerable<AuthorEM> result;
 
-            var result = repo.GetAuthors(searchInfo.PageSize, searchInfo.CurrentPage, out int total,
-                searchInfo.OrderingInfo.ColumnName, searchInfo.OrderingInfo.DescendingOrder);
+            if (filter.Order.Count != 0)
+            {
+                string columName = filter.Columns[filter.Order.First().Column].Name;
+                bool descOrder = filter.Order.First().Dir.ToUpper() == "DESC";
 
-            int numPages = (int)Math.Ceiling((double)total / searchInfo.PageSize);
-            filteredInfo = new FilteredInfoVM() { Total = total, Filtered = result.Count(), NumberOfPages = numPages };
+                var tmp = entityLocator.ConvertTo<AuthorFilterEM>(filter);
+                result = repo.GetAuthors(entityLocator.ConvertTo<AuthorFilterEM>(filter), filter.Length, filter.Start, out total, columName, descOrder);
+            }
+            else
+            {
+                result = repo.GetAuthors(entityLocator.ConvertTo<AuthorFilterEM>(filter), filter.Length, filter.Start, out total);
+            }
 
-            return entityLocator.ConvertTo<IEnumerable<AuthorVM>>(result);
-        }
-
-        public IEnumerable<AuthorVM> GetAuthors(AuthorFilterVM filter, SearchInfoVM searchInfo, out FilteredInfoVM filteredInfo)
-        {
-            var repo = serviceLocator.GetService<IAuthorRepository>();
-
-            var result = repo.GetAuthors(entityLocator.ConvertTo<AuthorFilterEM>(filter), searchInfo.PageSize, searchInfo.CurrentPage,
-                out int total, searchInfo.OrderingInfo.ColumnName, searchInfo.OrderingInfo.DescendingOrder);
-
-            int numPages = (int)Math.Ceiling((double)total / searchInfo.PageSize);
-            filteredInfo = new FilteredInfoVM() { Total = total, Filtered = result.Count(), NumberOfPages = numPages };
+            filtered = result.Count();
 
             return entityLocator.ConvertTo<IEnumerable<AuthorVM>>(result);
         }

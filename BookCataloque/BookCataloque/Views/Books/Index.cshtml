@@ -1,8 +1,4 @@
-﻿@model IEnumerable<BookCataloque.ViewModel.BookVM>
-@{ 
-    string dateFormat = "DD.MM.YYYY";
-}
-<div class="well row">
+﻿<div class="well row">
     <form id="filterForm">
         <div class="form-group col-sm-2">
             <div>
@@ -19,13 +15,13 @@
         <div class="form-group col-sm-3">
             <label>Publication Date</label>
             <div class="input-group">
-                <input type="text" class="form-control datepicker" id="publicationDateLowerBound" placeholder="From" data-bind="datepicker: PublicationDateLowerBound, datepickerOptions: { viewMode: 'days', format: '@dateFormat' }">
+                <input type="text" class="form-control datepicker" id="publicationDateLowerBound" placeholder="From" data-bind="datepicker: PublicationDateLowerBound, datepickerOptions: { viewMode: 'days', format: GlobalSettings.DateFormat }">
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
             </div>
             <div class="input-group">
-                <input type="text" id="publicationDateUpperBound" class="form-control datepicker" placeholder="To" data-bind="datepicker: PublicationDateUpperBound, datepickerOptions: { viewMode: 'days', format: '@dateFormat' }">
+                <input type="text" id="publicationDateUpperBound" class="form-control datepicker" placeholder="To" data-bind="datepicker: PublicationDateUpperBound, datepickerOptions: { viewMode: 'days', format: GlobalSettings.DateFormat }">
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -41,12 +37,12 @@
         <div class="form-group col-sm-4">
             <label for="title">Title</label>
             <input type="text" class="form-control" id="title" placeholder="Book Title" data-bind="value: Title, valueUpdate: 'afterkeydown'">
-            <button type="submit" class="btn btn-primary" data-bind="click: Search">Search</button>
+            <button type="submit" class="btn btn-primary" data-bind="click: Search, enable: BookFilter.vm.isValid()">Search</button>
         </div>
     </form>
 </div>
 
-<table id="tbl_books" class="table table-striped table-bordered" style="width:100%">
+<table id="tbl_books" class="table table-striped table-hover table-bordered" style="width:100%">
     <thead>
         <tr>
             <th>Title</th>
@@ -66,17 +62,14 @@
 
 @section scripts {
     <script>
-
         $(document).ready(function () {
             BookFilter.filterForm = '#filterForm';
-
-                    
             BookFilter.Initialize();
 
-            $('#tbl_books').dataTable({
-				"processing": true,
-				"serverSide": true
-            });
+            BookGrid.getBooksUrl = '@Url.Action("GetBooks", "Books")';
+            BookGrid.editAuthorUrl = '@Url.Action("Details", "Authors")';
+            BookGrid.tblSelector = '#tbl_books';
+            BookGrid.Initialize();
         });
     </script>
 }

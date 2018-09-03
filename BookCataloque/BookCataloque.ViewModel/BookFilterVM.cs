@@ -4,14 +4,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BookCataloque.ViewModel
 {
-    public class BookFilterVM
+    public class BookFilterVM: DataTableInfoVM
     {
         public string Title { get; set; }
 
-        [Range(0, 10, ErrorMessage = "Rating has to be between 0 an 10")]
+        [Range(1, 10, ErrorMessage = "Rating has to be between 1 and 10")]
         public float? RatingLowerBound { get; set; }
 
-        [Range(0, 10, ErrorMessage = "Rating has to be between 0 an 10")]
+        [Range(1, 10, ErrorMessage = "Rating has to be between 1 and 10")]
         public float? RatingUpperBound { get; set; }
 
         [PastDate]

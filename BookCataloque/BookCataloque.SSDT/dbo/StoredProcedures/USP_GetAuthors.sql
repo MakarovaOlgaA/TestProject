@@ -17,8 +17,8 @@ AS
                 COUNT(*) AS [NumberOfBooks]
          FROM [BookAuthors]
               INNER JOIN [Authors] ON [Authors].[AuthorID] = [BookAuthors].[AuthorID]
-         WHERE [FirstName] LIKE('%'+ISNULL(@FirstName, [FirstName])+'%')
-               AND [LastName] LIKE('%'+ISNULL(@LastName, [LastName])+'%')
+         WHERE (@FirstName IS NULL OR [FirstName] LIKE '%'+@FirstName+'%')
+               AND (@LastName IS NULL OR [LastName] LIKE '%'+@LastName+'%')
          GROUP BY [BookAuthors].[AuthorID], 
                   [FirstName], 
                   [LastName]

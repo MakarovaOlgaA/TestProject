@@ -8,16 +8,21 @@ namespace BookCataloque.Controllers
     {
         public ActionResult Index()
         {
-            SearchInfoVM searchInfo = new SearchInfoVM()
-            {
-                CurrentPage = 1,
-                PageSize = 100,
-                OrderingInfo = new OrderingInfoVM { ColumnName = "Title" }
-            };
+            return View();
+        }
 
-            var books = Factory.GetService<IBookDM>().GetBooks(searchInfo, out FilteredInfoVM filteredInfo);
+        public JsonResult GetBooks(BookFilterVM filter)
+        {
+            var books = Factory.GetService<IBookDM>().GetBooks(filter, out int total, out int filtered);
 
-            return View(books);
+            return Json(new { draw = filter.Draw, recordsFiltered = filtered, recordsTotal = total, data = books });
+        }
+
+        public JsonResult Delete(int id)
+        {
+            bool deleted = Factory.GetService<IBookDM>().DeleteBook(id);
+
+            return Json(new { success = deleted });
         }
     }
 }

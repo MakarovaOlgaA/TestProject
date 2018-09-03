@@ -9,8 +9,7 @@ namespace BookCataloque.Infrastructure.Business
 
         BookVM GetBook(int bookID);
 
-        IEnumerable<BookVM> GetBooks(SearchInfoVM searchInfo, out FilteredInfoVM filteredInfo);
-        IEnumerable<BookVM> GetBooks(BookFilterVM filter, SearchInfoVM searchInfo, out FilteredInfoVM filteredInfo);
+        IEnumerable<BookVM> GetBooks(BookFilterVM filter, out int total, out int filtered);
 
         bool UpdateBook(BookVM book);
 

@@ -46,61 +46,56 @@ namespace BookCataloque.DAL
         {
             using (SqlConnection db = new SqlConnection(connectionString))
             {
-                return db.Query<BookEM, AuthorEM, BookEM>("USP_GetBooks", (book, author) => { book.Authors.Add(author); return book; },
-                    splitOn: "AuthorID", commandType: CommandType.StoredProcedure).ToList();
+                var lookup = new Dictionary<int, BookEM>();
+
+                var result = db.Query<BookEM, AuthorEM, BookEM>("USP_GetBooks", (b, a) =>
+                {
+                    BookEM book;
+                    if (!lookup.TryGetValue(b.BookID, out book))
+                    {
+                        lookup.Add(b.BookID, book = b);
+                    }
+                    book.Authors.Add(a);
+                    return book;
+                }, splitOn: "AuthorID", commandType: CommandType.StoredProcedure).ToList();
+
+                return lookup.Values;
             }
         }
 
-        public IEnumerable<BookEM> GetBooks(int pageSize, int pageNumber, out int total, string sortColumn, bool descendingSortOrder = false)
+        public IEnumerable<BookEM> GetBooks(BookFilterEM filter, int pageSize, int pageNumber, out int total, string sortColumn = null, bool descendingSortOrder = false)
         {
             using (SqlConnection db = new SqlConnection(connectionString))
             {
                 var spParams = new DynamicParameters();
                 spParams.Add("PageSize", pageSize);
                 spParams.Add("PageNumber", pageNumber);
-                spParams.Add("SortColumn", sortColumn);
-                spParams.Add("DescendingOrder", descendingSortOrder);
-                spParams.Add("Total", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-                var result =  db.Query<BookEM, AuthorEM, BookEM>("USP_GetBooks", (book, author) => { book.Authors.Add(author); return book; },
-                    spParams, splitOn: "AuthorID", commandType: CommandType.StoredProcedure).ToList();
+                if (sortColumn != null)
+                {
+                    spParams.Add("SortColumn", sortColumn);
+                    spParams.Add("DescendingOrder", descendingSortOrder);
+                }
 
-                total = spParams.Get<int>("Total");
-
-                return result;
-            }
-        }
-
-        public IEnumerable<BookEM> GetBooks(BookFilterEM filter)
-        {
-            using (SqlConnection db = new SqlConnection(connectionString))
-            {
-                var spParams = new DynamicParameters();
-                spParams.AddDynamicParams(filter);
-
-                return db.Query<BookEM, AuthorEM, BookEM>("USP_GetBooks", (book, author) => { book.Authors.Add(author); return book; }, spParams, 
-                    splitOn: "AuthorID", commandType: CommandType.StoredProcedure).ToList();
-            }
-        }
-
-        public IEnumerable<BookEM> GetBooks(BookFilterEM filter, int pageSize, int pageNumber, out int total, string sortColumn, bool descendingSortOrder = false)
-        {
-            using (SqlConnection db = new SqlConnection(connectionString))
-            {
-                var spParams = new DynamicParameters();
-                spParams.Add("PageSize", pageSize);
-                spParams.Add("PageNumber", pageNumber);
-                spParams.Add("SortColumn", sortColumn);
-                spParams.Add("DescendingOrder", descendingSortOrder);
                 spParams.Add("Total", dbType: DbType.Int32, direction: ParameterDirection.Output);
                 spParams.AddDynamicParams(filter);
 
-                var result = db.Query<BookEM, AuthorEM, BookEM>("USP_GetBooks", (book, author) => { book.Authors.Add(author); return book; },
-                   spParams, splitOn: "AuthorID", commandType: CommandType.StoredProcedure).ToList();
+                var lookup = new Dictionary<int, BookEM>();
+
+                var result = db.Query<BookEM, AuthorEM, BookEM>("USP_GetBooks", (b, a) =>
+                {
+                    BookEM book;
+                    if (!lookup.TryGetValue(b.BookID, out book))
+                    {
+                        lookup.Add(b.BookID, book = b);
+                    }
+                    book.Authors.Add(a);
+                    return book;
+                }, spParams, splitOn: "AuthorID", commandType: CommandType.StoredProcedure).ToList();
 
                 total = spParams.Get<int>("Total");
 
-                return result;
+                return lookup.Values;
             }
         }
 

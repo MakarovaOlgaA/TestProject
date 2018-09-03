@@ -11,10 +11,8 @@ namespace BookCataloque.Infrastructure.Data
         AuthorEM GetAuthor(int authorID);
 
         IEnumerable<AuthorEM> GetAuthors();
-        IEnumerable<AuthorEM> GetAuthors(int pageSize, int pageNumber, out int total, string sortColumn, bool descendingSortOrder = false);
 
-        IEnumerable<AuthorEM> GetAuthors(AuthorFilterEM filter);
-        IEnumerable<AuthorEM> GetAuthors(AuthorFilterEM filter, int pageNumber, int pageSize, out int total, string sortColumn, bool descendingSortOrder = false);
+        IEnumerable<AuthorEM> GetAuthors(AuthorFilterEM filter, int pageNumber, int pageSize, out int total, string sortColumn = null, bool descendingSortOrder = false);
 
         bool UpdateAuthor(AuthorEM author);
    

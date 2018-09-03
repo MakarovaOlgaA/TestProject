@@ -39,7 +39,7 @@ namespace BookCataloque.DAL
         {
             using (SqlConnection db = new SqlConnection(connectionString))
             {
-                return db.Query<AuthorEM>("USP_GetAuthor", new { firstName, lastName }, commandType: CommandType.StoredProcedure).FirstOrDefault();
+                return db.Query<AuthorEM>("USP_GetAuthorByName", new { firstName, lastName }, commandType: CommandType.StoredProcedure).FirstOrDefault();
             }
         }
 
@@ -51,42 +51,20 @@ namespace BookCataloque.DAL
             }
         }
 
-        public IEnumerable<AuthorEM> GetAuthors(int pageSize, int pageNumber, out int total, string sortColumn, bool descendingSortOrder = false)
+        public IEnumerable<AuthorEM> GetAuthors(AuthorFilterEM filter, int pageSize,int pageNumber, out int total, string sortColumn = null, bool descendingSortOrder = false)
         {
             using (SqlConnection db = new SqlConnection(connectionString))
             {
                 var spParams = new DynamicParameters();
                 spParams.Add("PageSize", pageSize);
                 spParams.Add("PageNumber", pageNumber);
-                spParams.Add("SortColumn", sortColumn);
-                spParams.Add("DescendingOrder", descendingSortOrder);
-                spParams.Add("Total", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-                var result = db.Query<AuthorEM>("USP_GetAuthors", spParams, commandType: CommandType.StoredProcedure).ToList();
+                if (sortColumn != null)
+                {
+                    spParams.Add("SortColumn", sortColumn);
+                    spParams.Add("DescendingOrder", descendingSortOrder);
+                }
 
-                total = spParams.Get<int>("Total");
-
-                return result;
-            }
-        }
-
-        public IEnumerable<AuthorEM> GetAuthors(AuthorFilterEM filter)
-        {
-            using (SqlConnection db = new SqlConnection(connectionString))
-            {
-                return db.Query<AuthorEM>("USP_GetAuthors", new { filter.FirstName, filter.LastName }, commandType: CommandType.StoredProcedure).ToList();
-            }
-        }
-
-        public IEnumerable<AuthorEM> GetAuthors(AuthorFilterEM filter, int pageSize,int pageNumber, out int total, string sortColumn, bool descendingSortOrder = false)
-        {
-            using (SqlConnection db = new SqlConnection(connectionString))
-            {
-                var spParams = new DynamicParameters();
-                spParams.Add("PageSize", pageSize);
-                spParams.Add("PageNumber", pageNumber);
-                spParams.Add("SortColumn", sortColumn);
-                spParams.Add("DescendingOrder", descendingSortOrder);
                 spParams.Add("Total", dbType: DbType.Int32, direction: ParameterDirection.Output);
                 spParams.AddDynamicParams(filter);
 
