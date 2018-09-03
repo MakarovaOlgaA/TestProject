@@ -51,13 +51,22 @@
             <th>Pages</th>
             <th>Authors</th>
             <th></th>
-            <th></th>
         </tr>
     </thead>
     <tbody></tbody>
 </table>
 
+<div>
+    <button type="button" class="btn btn-primary" onclick="BookEditor.OpenAddingModal();">Add New Book</button>
+</div>
+
+@Html.Partial("BookEditingModal", ViewData["Authors"])
+
+
+
 @Scripts.Render("~/bundles/book-search")
+
+
 @Scripts.Render("~/bundles/ko-validation")
 
 @section scripts {
@@ -67,7 +76,9 @@
             BookFilter.Initialize();
 
             BookGrid.getBooksUrl = '@Url.Action("GetBooks", "Books")';
+            BookGrid.getBookUrl = '@Url.Action("GetBook", "Books")';
             BookGrid.editAuthorUrl = '@Url.Action("Details", "Authors")';
+            BookGrid.deleteBookUrl = '@Url.Action("Delete", "Books")';
             BookGrid.tblSelector = '#tbl_books';
             BookGrid.Initialize();
         });

@@ -9,7 +9,8 @@ namespace BookCataloque.Infrastructure.Business
 
         AuthorVM GetAuthor(int authorID);
         AuthorVM GetAuthor(string firstName, string lastName);
-        //AuthorVM GetAuthors(string searchString);
+
+        IEnumerable<AuthorVM> GetAuthors();
 
         IEnumerable<AuthorVM> GetAuthors(AuthorFilterVM filter, out int total, out int filtered);
 

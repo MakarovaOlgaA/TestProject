@@ -1,4 +1,5 @@
 ﻿using BookCataloque.Infrastructure.Business;
+using BookCataloque.ViewModel;
 using System.Web.Mvc;
 
 namespace BookCataloque.Controllers
@@ -18,10 +19,28 @@ namespace BookCataloque.Controllers
             return View();
         }
 
-        // GET: Authors
         public ActionResult Index()
         {
             return View();
+        }
+
+        public JsonResult Delete(int id)
+        {
+            bool deleted = Factory.GetService<IAuthorDM>().DeleteAuthor(id);
+
+            return Json(new { success = deleted });
+        }
+
+        public JsonResult Add(AuthorVM author)
+        {
+            Factory.GetService<IAuthorDM>().AddAuthor(author);
+            return Json(new { success = true });
+        }
+
+        public JsonResult Update(AuthorVM author)
+        {
+            bool updated = Factory.GetService<IAuthorDM>().UpdateAuthor(author);
+            return Json(new { success = updated });
         }
     }
 }

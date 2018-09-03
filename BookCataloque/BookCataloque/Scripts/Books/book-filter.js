@@ -26,16 +26,17 @@
             }
         };
 
-        inner.toJS = function () {
-            return {
-                RatingLowerBound: inner.RatingLowerBound(),
-                RatingUpperBound: inner.RatingUpperBound(),
-                PublicationDateLowerBound: inner.PublicationDateLowerBound() ? inner.PublicationDateLowerBound()._d : null,
-                PublicationDateUpperBound: inner.PublicationDateUpperBound() ? inner.PublicationDateUpperBound()._d : null,
-                PagesLowerBound: inner.PagesLowerBound(),
-                PagesUpperBound: inner.PagesUpperBound(),
-                Title: inner.Title()
-            }
+        inner.ToJS = function () {
+            var mapping = {
+                'ignore': ["PublicationDateLowerBound", "PublicationDateUpperBound", "Search", "ToJS", "errors"]
+            };
+
+            var result = ko.mapping.toJS(inner, mapping);
+
+            result.PublicationDateLowerBound = inner.PublicationDateLowerBound() ? inner.PublicationDateLowerBound()._d : null;
+            result.PublicationDateUpperBound = inner.PublicationDateUpperBound() ? inner.PublicationDateUpperBound()._d : null;
+
+            return result;
         }
     };
 

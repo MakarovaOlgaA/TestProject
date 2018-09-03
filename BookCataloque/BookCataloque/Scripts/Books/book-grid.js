@@ -5,9 +5,8 @@
     var dt = {};
 
     self.getBooksUrl = '';
-    self.deleteUrl = '';
-    self.updateUrl = '';
-    self.editAuthorUrl = '';
+    self.getBookUrl = '';
+    self.deleteBookUrl = '';
     self.tblSelector = '';
 
     self.Initialize = function () {
@@ -42,24 +41,17 @@
                 {
                     data: null,
                     render: function (data, type, row) {
-                        return "<a class='btn btn-info' href='#' onclick=BookGrid.DeleteBook('" + row.BookID + "'); >Edit</a>";
+                        return "<a class='btn btn-info' href='#' onclick=BookGrid.EditBook('" + row.BookID + "'); >Edit</a>" +
+                            "<a href='#' class='btn btn-danger' onclick=BookGrid.DeleteBook('" + row.BookID + "'); >Delete</a>";
                     }
                 },
-                {
-                    data: null,
-                    render: function (data, type, row) {
-                        return "<a href='#' class='btn btn-danger' onclick=BookEditor.DeleteBook('" + row.BookID + "'); >Delete</a>";
-                    }
-                }
             ],
             "ajax": {
                 "url": self.getBooksUrl,
                 "type": "POST",
                 "datatype": "json",
                 "data": function (d) {
-                    var tmp = Object.assign(d, BookFilter.vm.toJS())
-                    console.log(tmp);
-                    return tmp;
+                    return Object.assign(d, BookFilter.vm.ToJS())
                 }
             }
         });
@@ -68,4 +60,30 @@
     self.Reload = function () {
         $(self.tblSelector).DataTable().ajax.reload();
     };
+
+    self.DeleteBook = function (bookID) {
+        $.ajax({
+            url: self.deleteBookUrl,
+            type: "POST",
+            data: JSON.stringify({ id: bookID }),
+            contentType: 'application/json; charset=utf-8'
+        }).done(function (result) {
+            if (result.success) {
+                self.Reload();
+            }
+        });
+    }
+
+    self.EditBook = function (bookID) {
+        $.ajax({
+            url: self.getBookUrl,
+            type: "POST",
+            data: JSON.stringify({ id: bookID }),
+            contentType: 'application/json; charset=utf-8'
+        }).done(function (result) {
+            if (result.success) {
+                BookEditor.OpenEditingModal(result.data);
+            }
+        });
+    }
 }).apply(BookGrid);

@@ -47,7 +47,10 @@ namespace BookCataloque.DAL
         {
             using (SqlConnection db = new SqlConnection(connectionString))
             {
-                return db.Query<AuthorEM>("USP_GetAuthors", commandType: CommandType.StoredProcedure).ToList();
+                var spParams = new DynamicParameters();
+                spParams.Add("Total", dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                return db.Query<AuthorEM>("USP_GetAuthors", spParams, commandType: CommandType.StoredProcedure).ToList();
             }
         }
 

@@ -28,6 +28,12 @@ ko.validation.rules['integer'] = {
     message: 'The value must be integer.'
 };
 
+ko.validation.rules['required'] = {
+    validator: function (val, otherVal) {
+        return val != undefined && val != ''
+    },
+    message: 'This field is required.'
+};
 ko.validation.registerExtenders();
 
 /*custom bindingHandler for error message*/

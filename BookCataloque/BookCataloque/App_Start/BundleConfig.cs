@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace BookCataloque
 {
@@ -12,6 +11,7 @@ namespace BookCataloque
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootstrap.js",
                         "~/Scripts/knockout-{version}.js",
+                        "~/Scripts/knockout-mapping.js",
                         "~/Scripts/Extensions/ko-custom-bindings.js",
                         "~/Scripts/global-settings.js"));
 
@@ -29,11 +29,19 @@ namespace BookCataloque
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/select2.min.css"));
+
+            bundles.Add(new StyleBundle("~/Content/select2").Include(
+                     "~/Content/css/select2.min.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/book-search").Include(
                       "~/Scripts/Books/book-grid.js",
-                      "~/Scripts/Books/book-filter.js"));
+                      "~/Scripts/Books/book-filter.js",
+                      "~/Scripts/Books/book-editor.js",
+                      "~/Scripts/select2.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/authors-search").Include());
         }
     }
 }

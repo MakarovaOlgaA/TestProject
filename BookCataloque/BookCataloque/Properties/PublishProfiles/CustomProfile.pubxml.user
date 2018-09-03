@@ -28,46 +28,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/02/2018 02:19:03</publishTime>
     </File>
     <File Include="bin/BookCataloque.BL.dll">
-      <publishTime>09/03/2018 00:52:16</publishTime>
+      <publishTime>09/04/2018 01:33:39</publishTime>
     </File>
     <File Include="bin/BookCataloque.BL.pdb">
-      <publishTime>09/03/2018 00:52:16</publishTime>
+      <publishTime>09/04/2018 01:33:39</publishTime>
     </File>
     <File Include="bin/BookCataloque.Bootstrap.dll">
-      <publishTime>09/03/2018 16:19:48</publishTime>
+      <publishTime>09/04/2018 01:33:41</publishTime>
     </File>
     <File Include="bin/BookCataloque.Bootstrap.pdb">
-      <publishTime>09/03/2018 16:19:48</publishTime>
+      <publishTime>09/04/2018 01:33:41</publishTime>
     </File>
     <File Include="bin/BookCataloque.DAL.dll">
-      <publishTime>09/03/2018 16:19:43</publishTime>
+      <publishTime>09/04/2018 01:33:39</publishTime>
     </File>
     <File Include="bin/BookCataloque.DAL.pdb">
-      <publishTime>09/03/2018 16:19:43</publishTime>
+      <publishTime>09/04/2018 01:33:39</publishTime>
     </File>
     <File Include="bin/BookCataloque.dll">
-      <publishTime>09/03/2018 18:31:26</publishTime>
+      <publishTime>09/04/2018 01:33:52</publishTime>
     </File>
     <File Include="bin/BookCataloque.EntityModel.dll">
-      <publishTime>09/02/2018 21:01:38</publishTime>
+      <publishTime>09/03/2018 21:35:21</publishTime>
     </File>
     <File Include="bin/BookCataloque.EntityModel.pdb">
-      <publishTime>09/02/2018 21:01:38</publishTime>
+      <publishTime>09/03/2018 21:35:21</publishTime>
     </File>
     <File Include="bin/BookCataloque.Infrastructure.dll">
-      <publishTime>09/03/2018 00:52:16</publishTime>
+      <publishTime>09/04/2018 01:33:38</publishTime>
     </File>
     <File Include="bin/BookCataloque.Infrastructure.pdb">
-      <publishTime>09/03/2018 00:52:16</publishTime>
+      <publishTime>09/04/2018 01:33:38</publishTime>
     </File>
     <File Include="bin/BookCataloque.Model.dll">
-      <publishTime>09/02/2018 21:40:59</publishTime>
+      <publishTime>09/04/2018 01:33:37</publishTime>
     </File>
     <File Include="bin/BookCataloque.Model.pdb">
-      <publishTime>09/02/2018 21:40:59</publishTime>
+      <publishTime>09/04/2018 01:33:37</publishTime>
     </File>
     <File Include="bin/BookCataloque.pdb">
-      <publishTime>09/03/2018 18:31:26</publishTime>
+      <publishTime>09/04/2018 01:33:52</publishTime>
     </File>
     <File Include="bin/CommonServiceLocator.dll">
       <publishTime>07/02/2018 00:59:36</publishTime>
@@ -582,6 +582,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/buttons.dataTables.min.css">
       <publishTime>07/15/2018 18:33:06</publishTime>
     </File>
+    <File Include="Content/css/select2.css">
+      <publishTime>09/04/2018 01:17:22</publishTime>
+    </File>
+    <File Include="Content/css/select2.min.css">
+      <publishTime>09/04/2018 01:17:10</publishTime>
+    </File>
     <File Include="Content/dataTable/dataTables.bootstrap.min.css">
       <publishTime>07/15/2018 20:08:17</publishTime>
     </File>
@@ -700,13 +706,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/15/2018 19:13:38</publishTime>
     </File>
     <File Include="Scripts/Books/book-editor.js">
-      <publishTime>09/03/2018 18:57:28</publishTime>
+      <publishTime>09/04/2018 01:52:25</publishTime>
     </File>
     <File Include="Scripts/Books/book-filter.js">
-      <publishTime>09/03/2018 19:21:26</publishTime>
+      <publishTime>09/04/2018 01:13:42</publishTime>
     </File>
     <File Include="Scripts/Books/book-grid.js">
-      <publishTime>09/03/2018 19:21:43</publishTime>
+      <publishTime>09/04/2018 00:04:22</publishTime>
     </File>
     <File Include="Scripts/bootstrap-datetimepicker.js">
       <publishTime>07/16/2018 01:34:46</publishTime>
@@ -787,10 +793,172 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/03/2018 17:05:00</publishTime>
     </File>
     <File Include="Scripts/Extensions/ko-validation-rules.js">
-      <publishTime>09/03/2018 17:05:10</publishTime>
+      <publishTime>09/04/2018 01:09:28</publishTime>
     </File>
     <File Include="Scripts/global-settings.js">
       <publishTime>09/03/2018 18:22:37</publishTime>
+    </File>
+    <File Include="Scripts/i18n/af.js">
+      <publishTime>09/03/2018 23:12:51</publishTime>
+    </File>
+    <File Include="Scripts/i18n/ar.js">
+      <publishTime>09/03/2018 23:12:51</publishTime>
+    </File>
+    <File Include="Scripts/i18n/az.js">
+      <publishTime>09/03/2018 23:12:51</publishTime>
+    </File>
+    <File Include="Scripts/i18n/bg.js">
+      <publishTime>09/03/2018 23:12:50</publishTime>
+    </File>
+    <File Include="Scripts/i18n/bs.js">
+      <publishTime>09/03/2018 23:12:50</publishTime>
+    </File>
+    <File Include="Scripts/i18n/ca.js">
+      <publishTime>09/03/2018 23:12:50</publishTime>
+    </File>
+    <File Include="Scripts/i18n/cs.js">
+      <publishTime>09/03/2018 23:12:50</publishTime>
+    </File>
+    <File Include="Scripts/i18n/da.js">
+      <publishTime>09/03/2018 23:12:50</publishTime>
+    </File>
+    <File Include="Scripts/i18n/de.js">
+      <publishTime>09/03/2018 23:12:49</publishTime>
+    </File>
+    <File Include="Scripts/i18n/dsb.js">
+      <publishTime>09/03/2018 23:12:49</publishTime>
+    </File>
+    <File Include="Scripts/i18n/el.js">
+      <publishTime>09/03/2018 23:12:49</publishTime>
+    </File>
+    <File Include="Scripts/i18n/en.js">
+      <publishTime>09/03/2018 23:12:49</publishTime>
+    </File>
+    <File Include="Scripts/i18n/es.js">
+      <publishTime>09/03/2018 23:12:48</publishTime>
+    </File>
+    <File Include="Scripts/i18n/et.js">
+      <publishTime>09/03/2018 23:12:48</publishTime>
+    </File>
+    <File Include="Scripts/i18n/eu.js">
+      <publishTime>09/03/2018 23:12:48</publishTime>
+    </File>
+    <File Include="Scripts/i18n/fa.js">
+      <publishTime>09/03/2018 23:12:48</publishTime>
+    </File>
+    <File Include="Scripts/i18n/fi.js">
+      <publishTime>09/03/2018 23:12:48</publishTime>
+    </File>
+    <File Include="Scripts/i18n/fr.js">
+      <publishTime>09/03/2018 23:12:48</publishTime>
+    </File>
+    <File Include="Scripts/i18n/gl.js">
+      <publishTime>09/03/2018 23:12:47</publishTime>
+    </File>
+    <File Include="Scripts/i18n/he.js">
+      <publishTime>09/03/2018 23:12:47</publishTime>
+    </File>
+    <File Include="Scripts/i18n/hi.js">
+      <publishTime>09/03/2018 23:12:47</publishTime>
+    </File>
+    <File Include="Scripts/i18n/hr.js">
+      <publishTime>09/03/2018 23:12:43</publishTime>
+    </File>
+    <File Include="Scripts/i18n/hsb.js">
+      <publishTime>09/03/2018 23:12:43</publishTime>
+    </File>
+    <File Include="Scripts/i18n/hu.js">
+      <publishTime>09/03/2018 23:12:43</publishTime>
+    </File>
+    <File Include="Scripts/i18n/hy.js">
+      <publishTime>09/03/2018 23:12:43</publishTime>
+    </File>
+    <File Include="Scripts/i18n/id.js">
+      <publishTime>09/03/2018 23:12:43</publishTime>
+    </File>
+    <File Include="Scripts/i18n/is.js">
+      <publishTime>09/03/2018 23:12:43</publishTime>
+    </File>
+    <File Include="Scripts/i18n/it.js">
+      <publishTime>09/03/2018 23:12:43</publishTime>
+    </File>
+    <File Include="Scripts/i18n/ja.js">
+      <publishTime>09/03/2018 23:12:43</publishTime>
+    </File>
+    <File Include="Scripts/i18n/km.js">
+      <publishTime>09/03/2018 23:12:43</publishTime>
+    </File>
+    <File Include="Scripts/i18n/ko.js">
+      <publishTime>09/03/2018 23:12:43</publishTime>
+    </File>
+    <File Include="Scripts/i18n/lt.js">
+      <publishTime>09/03/2018 23:12:43</publishTime>
+    </File>
+    <File Include="Scripts/i18n/lv.js">
+      <publishTime>09/03/2018 23:12:42</publishTime>
+    </File>
+    <File Include="Scripts/i18n/mk.js">
+      <publishTime>09/03/2018 23:12:42</publishTime>
+    </File>
+    <File Include="Scripts/i18n/ms.js">
+      <publishTime>09/03/2018 23:12:42</publishTime>
+    </File>
+    <File Include="Scripts/i18n/nb.js">
+      <publishTime>09/03/2018 23:12:42</publishTime>
+    </File>
+    <File Include="Scripts/i18n/nl.js">
+      <publishTime>09/03/2018 23:12:42</publishTime>
+    </File>
+    <File Include="Scripts/i18n/pl.js">
+      <publishTime>09/03/2018 23:12:42</publishTime>
+    </File>
+    <File Include="Scripts/i18n/ps.js">
+      <publishTime>09/03/2018 23:12:42</publishTime>
+    </File>
+    <File Include="Scripts/i18n/pt-BR.js">
+      <publishTime>09/03/2018 23:12:42</publishTime>
+    </File>
+    <File Include="Scripts/i18n/pt.js">
+      <publishTime>09/03/2018 23:12:42</publishTime>
+    </File>
+    <File Include="Scripts/i18n/ro.js">
+      <publishTime>09/03/2018 23:12:42</publishTime>
+    </File>
+    <File Include="Scripts/i18n/ru.js">
+      <publishTime>09/03/2018 23:12:42</publishTime>
+    </File>
+    <File Include="Scripts/i18n/sk.js">
+      <publishTime>09/03/2018 23:12:42</publishTime>
+    </File>
+    <File Include="Scripts/i18n/sl.js">
+      <publishTime>09/03/2018 23:12:41</publishTime>
+    </File>
+    <File Include="Scripts/i18n/sr-Cyrl.js">
+      <publishTime>09/03/2018 23:12:41</publishTime>
+    </File>
+    <File Include="Scripts/i18n/sr.js">
+      <publishTime>09/03/2018 23:12:41</publishTime>
+    </File>
+    <File Include="Scripts/i18n/sv.js">
+      <publishTime>09/03/2018 23:12:41</publishTime>
+    </File>
+    <File Include="Scripts/i18n/th.js">
+      <publishTime>09/03/2018 23:12:41</publishTime>
+    </File>
+    <File Include="Scripts/i18n/tr.js">
+      <publishTime>09/03/2018 23:12:41</publishTime>
+    </File>
+    <File Include="Scripts/i18n/uk.js">
+      <publishTime>09/03/2018 23:12:41</publishTime>
+    </File>
+    <File Include="Scripts/i18n/vi.js">
+      <publishTime>09/03/2018 23:12:41</publishTime>
+    </File>
+    <File Include="Scripts/i18n/zh-CN.js">
+      <publishTime>09/03/2018 23:12:41</publishTime>
+    </File>
+    <File Include="Scripts/i18n/zh-TW.js">
+      <publishTime>09/03/2018 23:12:38</publishTime>
     </File>
     <File Include="Scripts/jquery-3.3.1.js">
       <publishTime>06/23/2018 17:32:42</publishTime>
@@ -831,6 +999,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/knockout-3.4.2.js">
       <publishTime>07/16/2018 23:13:20</publishTime>
     </File>
+    <File Include="Scripts/knockout-mapping.js">
+      <publishTime>09/03/2018 21:34:17</publishTime>
+    </File>
     <File Include="Scripts/knockout.validation.js">
       <publishTime>08/25/2018 20:55:06</publishTime>
     </File>
@@ -849,14 +1020,20 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/moment.min.js">
       <publishTime>07/16/2018 01:34:45</publishTime>
     </File>
+    <File Include="Scripts/select2.js">
+      <publishTime>09/03/2018 23:12:38</publishTime>
+    </File>
+    <File Include="Scripts/select2.min.js">
+      <publishTime>09/03/2018 23:12:38</publishTime>
+    </File>
     <File Include="Views/Authors/Details.cshtml">
       <publishTime>09/03/2018 13:54:13</publishTime>
     </File>
     <File Include="Views/Books/BookEditingModal.cshtml">
-      <publishTime>09/03/2018 17:11:26</publishTime>
+      <publishTime>09/04/2018 01:52:51</publishTime>
     </File>
     <File Include="Views/Books/Index.cshtml">
-      <publishTime>09/03/2018 21:05:09</publishTime>
+      <publishTime>09/04/2018 01:43:00</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>06/23/2018 17:32:42</publishTime>
@@ -880,7 +1057,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/23/2018 17:32:42</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/02/2018 21:45:11</publishTime>
+      <publishTime>09/03/2018 23:39:41</publishTime>
     </File>
   </ItemGroup>
 </Project>

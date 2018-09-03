@@ -38,7 +38,13 @@ namespace BookCataloque.BL
             var repo = serviceLocator.GetService<IAuthorRepository>();
             return entityLocator.ConvertTo<AuthorVM>(repo.GetAuthor(firstName, lastName));
         }
-       
+
+        public IEnumerable<AuthorVM> GetAuthors()
+        {
+            var repo = serviceLocator.GetService<IAuthorRepository>();
+            return entityLocator.ConvertTo<IEnumerable<AuthorVM>>(repo.GetAuthors());
+        }
+
         public IEnumerable<AuthorVM> GetAuthors(AuthorFilterVM filter, out int total, out int filtered)
         {
             var repo = serviceLocator.GetService<IAuthorRepository>();
